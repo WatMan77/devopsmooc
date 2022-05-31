@@ -1,0 +1,4 @@
+There was a problem with some weird \r or \n or CRLF type of stuff.
+Had to use dos2unix and just in case chmod +x mvnw.
+
+Otherwise it complained ./mvnw not found
