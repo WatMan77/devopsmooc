@@ -1,0 +1,13 @@
+# First run the container
+docker run -it --rm --name website ubuntu sh -c "echo 'Input website:'; read website; echo 'Searching..'; sleep 1; curl http://$website;"
+
+# In a separate window, first go inside the container
+docker exec -it website bash
+
+# Inside install the update
+apt update -y
+
+# Then install curl
+apt install -y curl
+
+# Finally in the first window insert helsinki.fi
