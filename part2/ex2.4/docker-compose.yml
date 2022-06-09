@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  backend:
+    build: ./backend
+    ports:
+      - 8080:8080
+
+  frontend:
+    build: ./frontend
+    ports:
+      - 5000:5000
+
+  redis:
+    image: redis:latest
+    command: redis-server --save 20 1 --loglevel warning
+    ports:
+      - 6379:6379
