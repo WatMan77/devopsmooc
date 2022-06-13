@@ -7,6 +7,9 @@ services:
       - 8080:8080
     environment:
       - REDIS_HOST=redis
+      - POSTGRES_PASSWORD=example
+    depends_on:
+      - db
 
   frontend:
     build: ./frontend
@@ -15,3 +18,10 @@ services:
 
   redis:
     image: redis:latest
+
+  db:
+    image: postgres:13.2-alpine
+    restart: unless-stopped
+    environment:
+      - POSTGRES_PASSWORD=example
+    container_name: my_db
