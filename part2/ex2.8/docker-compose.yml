@@ -19,7 +19,6 @@ services:
     ports:
       - 80:80
 
-#No matter what I try it always shows the front page of nginx
   frontend:
     build: ./frontend
     ports:
@@ -33,4 +32,3 @@ services:
     restart: unless-stopped
     environment:
       - POSTGRES_PASSWORD=example
-    container_name: my_db
