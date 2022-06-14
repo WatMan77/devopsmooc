@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  node-app:
+    build: .
+    command: npm run start
+    ports:
+      - 3000:3000
+    volumes:
+      - ./:/usr/src/app
+      - node_modules:/usr/src/app/node_modules
+    container_name: node-app
+
+volumes:
+  node_modules:

@@ -1,0 +1,3 @@
+A very simple app that says hello when given a name
+Unfortunately volumes have a hard time working on windows so I couldn't make this more
+complex so most of it is copied from the example exercise as in that case I am 99% sure it works.
