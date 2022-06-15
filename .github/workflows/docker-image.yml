@@ -2,9 +2,7 @@ name: Release DevOps with Docker # Name of the workflow
 
 # On a push to the branch named master
 on:
-  push:
-    branches:
-      - main
+  push
 
 # Job called build runs-on ubuntu-latest
 jobs:
@@ -27,8 +25,9 @@ jobs:
         push: true
         tags: dansku110/testbuild:latest
     - name: Push to Heroku
-      uses: gonuit/heroku-docker-deploy@v1.3.3
+      uses: akhileshns/heroku-deploy@v3.12.12
       with:
         email: ${{ secrets.HEORKU_EMAIL }}
         heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
         heroku_app_name: $ {{ secrets. HEROKU_APP_NAME }}
+        
