@@ -6,9 +6,9 @@ services:
     command: npm run start
     ports:
       - 3000:3000
-    volumes:
-      - ./:/app
-      - node_modules:/node_modules
+    #volumes:
+    #  - ./:/usr/src/app
+    #  - node_modules:/node_modules
     container_name: node-app
 
 volumes:
