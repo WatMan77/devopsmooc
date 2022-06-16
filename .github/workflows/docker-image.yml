@@ -1,3 +1,6 @@
+### NOTE!!! ###
+# This file represents what it should look like in the ROOT directory!
+
 name: Release DevOps with Docker # Name of the workflow
 
 # On a push to the branch named master
