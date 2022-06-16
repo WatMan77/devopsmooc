@@ -1,0 +1,2 @@
+Remove "ports:" from front- and backend
+Remove ENV REQUEST_ORIGIN=http://localhost:5000 and ENV REQUEST_ORIGIN=http://localhost:5000

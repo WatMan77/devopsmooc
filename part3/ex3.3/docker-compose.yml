@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  backend:
+    build: ./backend
+    environment:
+      - REDIS_HOST=redis
+      - POSTGRES_PASSWORD=example
+      - POSTGRES_HOST=db
+    depends_on:
+      - db
+
+  proxy:
+    image: nginx:latest
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+    ports:
+      - 80:80
+
+  frontend:
+    build: ./frontend
+
+  redis:
+    image: redis:latest
+
+  db:
+    image: postgres:13.2-alpine
+    restart: unless-stopped
+    environment:
+      - POSTGRES_PASSWORD=example
+    volumes:
+      - ./database:/var/lib/postgresql/data

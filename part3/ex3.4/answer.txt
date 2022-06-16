@@ -1,0 +1,8 @@
+From ex3.3 we got:
+Frontend: 1.26GB
+Backend: 1.07GB
+
+
+After improvements:
+Frontend:
+Backend:
