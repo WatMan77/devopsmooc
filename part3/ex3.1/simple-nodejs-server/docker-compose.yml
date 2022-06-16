@@ -7,7 +7,7 @@ services:
     ports:
       - 3000:3000
     volumes:
-      - ./:/usr/src/app
+      - ./:/app
       - node_modules:/node_modules
     container_name: node-app
 
