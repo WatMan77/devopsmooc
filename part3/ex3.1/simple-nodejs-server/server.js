@@ -20,6 +20,6 @@ app.get('*', function (_req, res) {
   res.redirect('/hello?name=Jorma')
 })
 
-app.listen(3000, () => {
-  console.log('App listening in port 3000')
+app.listen(process.env.PORT || 3000, () => {
+  console.log(`App listening to port ${process.env.PORTR || 3000}`)
 })
