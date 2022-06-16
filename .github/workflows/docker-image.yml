@@ -24,7 +24,7 @@ jobs:
       with:
         push: true
         tags: dansku110/testbuild:latest
-        file: part3/ex3.1/simple-nodejs-server/Dockerfile
+        #file: part3/ex3.1/simple-nodejs-server/Dockerfile
     - name: Push to Heroku
       uses: akhileshns/heroku-deploy@v3.12.12
       with:
