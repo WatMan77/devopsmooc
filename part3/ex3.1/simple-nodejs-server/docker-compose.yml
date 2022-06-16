@@ -11,5 +11,5 @@ services:
     #  - node_modules:/node_modules
     container_name: node-app
 
-volumes:
-  node_modules:
+#volumes:
+#  node_modules:

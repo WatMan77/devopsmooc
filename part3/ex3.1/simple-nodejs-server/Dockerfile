@@ -1,9 +1,9 @@
 FROM node:latest
 
-#WORKDIR /usr/src/app
+WORKDIR /usr/src/app
+
+COPY ./ ./
 
 EXPOSE 5000
-
-COPY . .
 
 RUN npm install
