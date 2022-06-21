@@ -4,5 +4,5 @@ Backend: 1.07GB
 
 
 After improvements:
-Frontend:
-Backend:
+Frontend: 552MB
+Backend: 81.6MB
