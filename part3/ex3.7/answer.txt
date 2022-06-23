@@ -1,0 +1,9 @@
+The app itself is very simple so there wasn't that much to change.
+As there was only one RUN command, it could not be optimized more in that aspect
+
+Changed image to node:alpine (biggest factor)
+Running npm ci as to not install dev-dependencies
+Running rm -rf /var/lib/apt/lists/*
+
+Before: 1.01GB
+After: 182MB
