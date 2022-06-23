@@ -1,6 +1,6 @@
-FROM node:16-alpine3.16 AS build-env
+FROM node:16-alpine AS build-env
 
-EXPOSE 5000
+#EXPOSE 5000
 
 WORKDIR /usr/src/app
 
@@ -11,15 +11,15 @@ RUN npm install && \
 	npm install -g serve && \
 	rm -rf /var/lib/apt/lists/*
 
-FROM node:16-alpine3.16
+FROM alpine
 WORKDIR /usr/src/app
-RUN npm install -g serve
+RUN apk add --update nodejs npm && npm install -g serve
 
-EXPOSE 5000
+#EXPOSE 5000
 
 COPY --from=build-env /usr/src/app/build /usr/src/app
 
-CMD ["serve", "-s", "-l", "5000", "build"]
+CMD ["npx", "serve", "-s", "-l", "5000", "build"]
 
 # You can run this image with 
 # docker run -p 5000:5000 <image name>

@@ -4,4 +4,4 @@ Backend: 81.6MB
 
 After adding alpine:
 Frontend: 439MB
-Backend: 23.6MB
+Backend: 447MB

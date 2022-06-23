@@ -6,7 +6,7 @@ COPY . .
 
 RUN go build && go test ./...
 
-FROM alpine:latest
+FROM ubuntu:18.04
 
 ENV PORT=8080
 WORKDIR /usr/src/app

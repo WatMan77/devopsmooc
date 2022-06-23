@@ -1,18 +1,9 @@
-FROM golang:1.16.15 AS dev-env
+FROM golang:1.16-alpine
 
 WORKDIR /usr/src/app
 
 COPY . .
 
-RUN go build && go test ./...
+RUN go build
 
-FROM alpine:latest
-
-ENV PORT=8080
-WORKDIR /usr/src/app
-
-COPY --from=dev-env /usr/src/app/server /usr/src/app
-
-# Could not get the USER part to work on Alpine
-# Adding a user is different on Alpine
-CMD ["./server"]
+CMD ./server
