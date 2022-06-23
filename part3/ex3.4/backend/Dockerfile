@@ -4,16 +4,8 @@ WORKDIR /usr/src/app
 
 COPY . .
 
-RUN go build && go test ./...
+RUN go build && go test ./... && useradd -m appuser && chown appuser .
 
-FROM ubuntu:18.04
-
-ENV PORT=8080
-WORKDIR /usr/src/app
-
-COPY --from=dev-env /usr/src/app/server /usr/src/app
-
-RUN useradd -m appuser && chown appuser .
 USER appuser
 
 CMD ["./server"]
