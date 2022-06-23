@@ -1,6 +1,6 @@
 From ex3.5:
-Frontend: 552MB
-Backend: 81.6MB
+Frontend: 439MB
+Backend: 447MB
 
 After changes:
 Frontend: 123MB
