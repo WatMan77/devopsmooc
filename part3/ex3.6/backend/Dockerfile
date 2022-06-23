@@ -1,17 +1,22 @@
-FROM golang:1.16.15 AS dev-env
+FROM golang:1.16.15-alpine AS dev-env
 
 WORKDIR /usr/src/app
 
 COPY . .
 
-RUN go build && go test ./...
+RUN go mod download && go build
 
-FROM ubuntu:18.04
+FROM alpine:latest
 
-ENV PORT=8080
 WORKDIR /usr/src/app
 
+EXPOSE 8080
+
+ENV PORT=8080
+
 COPY --from=dev-env /usr/src/app/server /usr/src/app
+
+ENV CGO_ENABLED=0
 
 # Could not get the USER part to work on Alpine
 # Adding a user is different on Alpine
